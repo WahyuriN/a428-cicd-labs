@@ -1,7 +1,8 @@
 node {
     environment {
-        GITHUB_TOKEN     = credentials('jenkins-github-token')
+        GITHUB_TOKEN = credentials('jenkins-github-token')
         GITHUB_REPOSITORY = 'WahyuriN/a428-cicd-labs'
+    }
     docker.image('timbru31/node-alpine-git:16').inside('-p 3000:3000'){
         stage('Build'){
             checkout scm
